@@ -18,6 +18,10 @@ CLOUD_IP = $(shell terraform output -raw IP)
 init:
 	terraform init
 
+.PHONY: format
+format:
+	terraform fmt && terraform validate
+
 .PHONY: refresh
 refresh:
 	terraform refresh
@@ -26,8 +30,8 @@ refresh:
 plan:
 	terraform plan
 
-.PHONY: apply
-apply:
+.PHONY: provision
+provision:
 	terraform apply
 
 .PHONY: list
