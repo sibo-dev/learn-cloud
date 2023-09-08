@@ -1,3 +1,5 @@
 **/.terraform
 **/.terraform.lock.hcl
 *.pub
+cloud/bandit/*.md
+cloud/bandit/*.private
