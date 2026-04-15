@@ -13,6 +13,8 @@ Sibonelo Nkosi
 :stem:
 :idprefix:
 :idseparator: -
+:source-highlighter: rouge
+:rouge-style: github
 
 include::content/01-introduction.adoc[]
 

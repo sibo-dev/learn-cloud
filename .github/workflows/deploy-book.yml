@@ -1,0 +1,36 @@
+name: Build and Deploy Book
+
+on:
+  push:
+    branches:
+      - feature/booklet
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build PDF and HTML
+        run: |
+          mkdir -p build
+          # Build PDF from the 'book' directory
+          docker run --rm -v ${{ github.workspace }}:/documents/ \
+            asciidoctor/docker-asciidoctor \
+            asciidoctor-pdf -D build book/index.adoc
+
+          # Build HTML from the 'book' directory
+          docker run --rm -v ${{ github.workspace }}:/documents/ \
+            asciidoctor/docker-asciidoctor \
+            asciidoctor -D build book/index.adoc
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          force_orphan: true

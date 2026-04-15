@@ -1,8 +1,22 @@
-REM Docker image: https://hub.docker.com/r/asciidoctor/docker-asciidoctor
-REM Docker image repository: https://github.com/asciidoctor/docker-asciidoctor
-REM The directory where the book source is located
-SET BOOK_SOURCE_DIR=.
-REM The directory where the book's generated output files will be created
-SET BOOK_BUILD_DIR=build
+@echo off
+REM Get the absolute path of the project root (one level up from this script)
+pushd "%~dp0.."
+set "PROJECT_ROOT=%CD%"
+popd
 
-docker run --rm -v "%CD%":/documents/ asciidoctor/docker-asciidoctor asciidoctor-pdf -D %BOOK_BUILD_DIR% %BOOK_SOURCE_DIR%/index.adoc
+REM Configuration
+SET BOOK_SOURCE=book/index.adoc
+SET BUILD_DIR=build
+
+echo Building book from: %PROJECT_ROOT%
+
+REM Ensure build directory exists at the root
+if not exist "%PROJECT_ROOT%\%BUILD_DIR%" mkdir "%PROJECT_ROOT%\%BUILD_DIR%"
+
+REM Run Docker
+REM We mount the PROJECT_ROOT to /documents/
+docker run --rm -v "%PROJECT_ROOT%":/documents/ asciidoctor/docker-asciidoctor asciidoctor-pdf -D %BUILD_DIR% %BOOK_SOURCE%
+
+echo.
+echo Build complete! Your PDF is in the %BUILD_DIR% folder.
+pause

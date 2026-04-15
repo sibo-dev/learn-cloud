@@ -4,3 +4,11 @@
 cloud/bandit/*.md
 cloud/bandit/*.private
 booklet/
+
+# Outputs
+# Documentation builds
+build/
+book/build/
+*.pdf
+*.epub
+*.html
