@@ -1,0 +1,21 @@
+= Getting Started with Cloud: A Practical Manual
+Sibonelo Nkosi
+:doctype: book
+:icons: font
+:source-highlighter: highlight.js
+:toc: left
+:toclevels: 3
+:sectnums:
+:imagesdir: ./images
+:revnumber: 0.1
+:revdate: {localdate}
+:revremark: Work in Progress
+:stem:
+:idprefix:
+:idseparator: -
+
+include::content/01-introduction.adoc[]
+
+include::content/02-cloud-fundamentals.adoc[]
+
+include::content/03-deploying-first-project.adoc[]

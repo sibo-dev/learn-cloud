@@ -1,0 +1,19 @@
+== Introduction to the Cloud
+
+The transition from local development to the cloud is a milestone for any developer. 
+
+[TIP]
+.Prerequisites
+Before starting, ensure you have a terminal installed and a basic understanding of Git.
+
+=== Why This Manual?
+This guide focuses on the "how" of deployment. We will be using real-world scenarios, such as deploying a frontend React application to AWS.
+
+.First Terminal Command
+[source,bash]
+----
+aws configure <1>
+----
+<1> This command sets up your local environment to communicate with your AWS account.
+
+image::aws-login-screen.png[The AWS Login Screen, width=600, align="center"]

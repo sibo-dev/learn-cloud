@@ -3,3 +3,4 @@
 *.pub
 cloud/bandit/*.md
 cloud/bandit/*.private
+booklet/
