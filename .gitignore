@@ -12,3 +12,4 @@ book/build/
 *.pdf
 *.epub
 *.html
+.*.png

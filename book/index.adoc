@@ -1,20 +1,20 @@
 = Getting Started with Cloud: A Practical Manual
 Sibonelo Nkosi
 :doctype: book
-:icons: font
-:source-highlighter: highlight.js
-:toc: left
-:toclevels: 3
-:sectnums:
-:imagesdir: ./images
 :revnumber: 0.1
 :revdate: {localdate}
 :revremark: Work in Progress
+:front-cover-image: image:cover.png[Front Cover,800,1200]
+:toc: left
+:toclevels: 3
+:sectnums:
+:imagesdir: images
 :stem:
 :idprefix:
 :idseparator: -
-:source-highlighter: rouge
-:rouge-style: github
+:icons: font
+:source-highlighter: highlight.js
+:docinfo: shared
 
 include::content/01-introduction.adoc[]
 
